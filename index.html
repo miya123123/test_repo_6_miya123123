@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Gallery - ゲーム公開サイト</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- PWA対応のメタタグ -->
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Game Gallery">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <i class="fas fa-gamepad"></i>
+                Game Gallery
+            </h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#games">ゲーム</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>最新のゲームを発見しよう</h2>
+                    <p>クリエイティブなゲームたちがここに集まっています</p>
+                    <button class="cta-button" onclick="scrollToGames()">
+                        <i class="fas fa-play"></i>
+                        ゲームを探す
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="games" class="games-section">
+            <div class="container">
+                <h2 class="section-title">公開中のゲーム</h2>
+                <div class="games-grid" id="gamesGrid">
+                    <!-- ゲームは動的に追加されます -->
+                </div>
+                <div class="upload-section">
+                    <h3>新しいゲームを公開</h3>
+                    <form id="gameForm" class="game-form">
+                        <div class="form-group">
+                            <label for="gameTitle">ゲームタイトル</label>
+                            <input type="text" id="gameTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gameDescription">説明</label>
+                            <textarea id="gameDescription" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="gameUrl">ゲームURL</label>
+                            <input type="url" id="gameUrl" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gameImage">画像URL</label>
+                            <input type="url" id="gameImage">
+                        </div>
+                        <div class="form-group">
+                            <label for="gameGenre">ジャンル</label>
+                            <select id="gameGenre">
+                                <option value="action">アクション</option>
+                                <option value="puzzle">パズル</option>
+                                <option value="rpg">RPG</option>
+                                <option value="strategy">ストラテジー</option>
+                                <option value="arcade">アーケード</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-plus"></i>
+                            ゲームを追加
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About Game Gallery</h2>
+                <div class="about-content">
+                    <p>Game Galleryは、クリエイターが自分の作品を公開し、プレイヤーが新しいゲームを発見できるプラットフォームです。</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-rocket"></i>
+                            <h3>簡単公開</h3>
+                            <p>URLを入力するだけで簡単にゲームを公開できます</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <h3>コミュニティ</h3>
+                            <p>ゲーム愛好家のコミュニティで交流できます</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>レスポンシブ</h3>
+                            <p>PC、タブレット、スマートフォンで快適に利用できます</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-content">
+                    <p>ご質問やフィードバックがございましたら、お気軽にお問い合わせください。</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@gamegallery.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-twitter"></i>
+                            <span>@gamegallery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Game Gallery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
